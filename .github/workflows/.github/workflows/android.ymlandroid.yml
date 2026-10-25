@@ -1,0 +1,46 @@
+name: Compilar SHADOWHAT Android
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Extraer proyecto Android
+        run: |
+          mkdir -p extracted
+          unzip -q SHADOWHAT-Android-Kotlin-Compose.zip -d extracted
+
+      - name: Compilar APK
+        run: |
+          WRAPPER=$(find extracted -type f -name gradlew -print -quit)
+          if [ -z "$WRAPPER" ]; then
+            echo "ERROR: No se encontró gradlew dentro del ZIP"
+            find extracted -maxdepth 4 -type f | head -80
+            exit 1
+          fi
+          PROJECT_DIR="$(dirname "$WRAPPER")"
+          chmod +x "$WRAPPER"
+          cd "$PROJECT_DIR"
+          ./gradlew assembleDebug
+
+      - name: Guardar APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: SHADOWHAT-APK
+          path: extracted/**/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
+          
