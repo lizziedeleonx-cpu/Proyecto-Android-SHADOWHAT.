@@ -1,0 +1,8 @@
+<resources>
+    <color name="black_onyx">#09090B</color>
+    <color name="crimson_primary">#E11D48</color>
+    <color name="crimson_dark">#9F1239</color>
+    <color name="graphite_surface">#18181B</color>
+    <color name="gold_accent">#F59E0B</color>
+    <color name="white_text">#F4F4F5</color>
+</resources>

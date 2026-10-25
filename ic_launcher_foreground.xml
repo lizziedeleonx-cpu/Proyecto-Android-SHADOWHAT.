@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Shadow Crimson Quills Silhouette -->
+    <path
+        android:fillColor="#E11D48"
+        android:pathData="M54,22 L64,40 L86,34 L70,54 L84,68 L62,66 L54,84 L46,66 L24,68 L38,54 L22,34 L44,40 Z" />
+    <!-- Inner Onyx Core -->
+    <path
+        android:fillColor="#09090B"
+        android:pathData="M54,34 L60,46 L74,42 L64,54 L72,62 L58,61 L54,72 L50,61 L36,62 L44,54 L34,42 L48,46 Z" />
+    <!-- Fierce Crimson Eyes -->
+    <path
+        android:fillColor="#FF1744"
+        android:pathData="M41,49 L51,52 L49,56 L39,53 Z" />
+    <path
+        android:fillColor="#FF1744"
+        android:pathData="M67,49 L57,52 L59,56 L69,53 Z" />
+    <!-- Gold Inhibitor Ring Accent -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M46,68 L62,68 L60,72 L48,72 Z" />
+</vector>
